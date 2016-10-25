@@ -1,10 +1,10 @@
-# CTestProject
-AndroidStudio2.2 NDK开发示例
 #Android Studio2.2版本NDK开发
 
 在Android Studio2.2之后Google简化了NDK开发的流程，不再需要之前的.mk文件。
 
 [Add C and C++ Code to Your Project](https://developer.android.com/studio/projects/add-native-code.html)
+
+[本地版Add C and C++ Code to Your Project](Google官方的NDK开发指南/index.htm)
 
 ## 1、下载NDK 和 Build Tools
 

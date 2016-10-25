@@ -11,3 +11,7 @@
 /.idea/
 /app/.externalNativeBuild/
 /app/.gitignore
+.gitignore
+libs/
+src/androidTest/
+src/test/

@@ -1,0 +1,1543 @@
+<!DOCTYPE html>
+<!-- saved from url=(0066)https://developer.android.com/studio/projects/add-native-code.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+  
+
+
+
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+
+
+
+
+<script type="text/javascript" async="" src="./Add C and C++ Code to Your Project _ Android Studio_files/linkid.js"></script><script async="" src="./Add C and C++ Code to Your Project _ Android Studio_files/analytics.js"></script><script>var a=window.devsite||{};window.devsite=a;a.readyCallbacks=[];window.devsite.readyCallbacks=a.readyCallbacks;a.ready=function(b){a.readyCallbacks.push(b)};window.devsite.ready=a.ready;
+</script>
+
+
+
+<meta name="xsrf_token" content="ppNZseICvqbetXd3LxRhFJTg2tH-CxgY9tODBc5IzrQ6MTQ3Njk0NDg5Mzk5NjAyMA">
+
+
+  <link rel="canonical" href="https://developer.android.com/studio/projects/add-native-code.html">
+
+
+
+  
+  <link rel="alternate" href="https://developer.android.com/studio/projects/add-native-code.html" hreflang="en">
+  
+
+
+<link rel="shortcut icon" href="https://developer.android.com/favicon.ico">
+
+
+
+<title>
+
+  Add C and C++ Code to Your Project | Android Studio
+
+</title>
+<meta name="description" content="None">
+
+<!-- STYLESHEETS -->
+<link rel="stylesheet" href="./Add C and C++ Code to Your Project _ Android Studio_files/css">
+<link rel="stylesheet" href="./Add C and C++ Code to Your Project _ Android Studio_files/css(1)" title="roboto">
+
+
+
+
+<link href="./Add C and C++ Code to Your Project _ Android Studio_files/default.css" rel="stylesheet" type="text/css">
+<!-- JAVASCRIPT -->
+<script src="./Add C and C++ Code to Your Project _ Android Studio_files/jsapi" type="text/javascript"></script>
+<script src="./Add C and C++ Code to Your Project _ Android Studio_files/android_3p-bundle.js" type="text/javascript"></script>
+<script src="./Add C and C++ Code to Your Project _ Android Studio_files/script_foot_closure_android.js"></script>
+
+
+<script type="text/javascript">
+  var toRoot = '/';
+  var useUpdatedTemplates = true;
+  devsite.permissions.init({"044f63022fa45182fb1e55a4cf633f49": false, "098dafe57affddc137df300142652cfd": false, "4c1e030265e73d132474df5ca11667f1": true, "51470233c56fc1fde50f00b73c52b216": false, "700def1a83e356c06c0925afb05de4b0": false, "6749dcb526ce9bde6993550c7d928d24": true});
+
+  var useDevsiteMetadata = false;
+  var trusted_ip = ''.toLowerCase();
+  trusted_ip = trusted_ip == 'true' || false;
+  if (devsite.permissions.hasPermission('DAC_DEVSITE_METADATA') || trusted_ip) {
+    var useDevsiteMetadata = true;
+  }
+
+  var ANDROID_LANGUAGES = [
+    
+      
+      'en','es','id','ja','ko','pt-br','ru','vi','zh-cn','zh-tw'
+    
+  ];
+</script>
+<script src="./Add C and C++ Code to Your Project _ Android Studio_files/docs.js" type="text/javascript"></script>
+
+
+
+</head>
+
+<body class="gc-documentation dac-studio no-crumbs guide  dac-nav-open" itemscope="" itemtype="http://schema.org/Article">
+  
+
+
+  
+    <input class="google-analytics-id-json" type="hidden" value="{&quot;dimensions&quot;: {&quot;dimension6&quot;: &quot;en&quot;, &quot;dimension5&quot;: &quot;en&quot;, &quot;dimension3&quot;: false, &quot;dimension8&quot;: null, &quot;dimension1&quot;: &quot;Signed out&quot;}, &quot;gaid&quot;: &quot;UA-49880327-2&quot;}">
+  
+    <input class="google-analytics-id-json" type="hidden" value="{&quot;dimensions&quot;: {&quot;dimension6&quot;: &quot;en&quot;, &quot;dimension5&quot;: &quot;en&quot;, &quot;dimension3&quot;: false, &quot;dimension8&quot;: null, &quot;dimension1&quot;: &quot;Signed out&quot;}, &quot;gaid&quot;: &quot;UA-5831155-1&quot;}">
+  
+
+
+
+  
+  
+    <script>
+      var dataLayer = [{"freeTrialEligibleUser": "False", "language": {"requested": "en", "served": "en"}, "projectName": null, "scriptsafe": null, "signedIn": "False", "internalUser": "False"}];
+    </script>
+  
+
+
+
+  <a href="https://developer.android.com/studio/projects/add-native-code.html#top" id="skip-to-main">Skip to content</a>
+  <header id="header-wrapper">
+    <div class="dac-header" id="header">
+      <div class="dac-header-inner">
+        <a class="dac-nav-toggle" data-dac-toggle-nav="" href="https://developer.android.com/studio/projects/add-native-code.html" title="Open navigation">
+          <span class="dac-nav-hamburger">
+            <span class="dac-nav-hamburger-top"></span>
+            <span class="dac-nav-hamburger-mid"></span>
+            <span class="dac-nav-hamburger-bot"></span>
+          </span>
+        </a>
+        
+<a class="dac-header-logo" href="https://developer.android.com/studio/index.html">
+  <img class="dac-header-logo-image" src="https://developer.android.com/studio/images/studio-icon.png" srcset="https://developer.android.com/studio/images/studio-icon_2x.png 2x" width="34" height="36" alt=""> Android Studio</a>
+<ul class="dac-header-tabs">
+  <li>
+    <a class="dac-header-tab" href="https://developer.android.com/studio/features.html" es-lang="Funciones" id-lang="Fitur" ja-lang="機能" ko-lang="기능" pt-br-lang="Recursos" zh-cn-lang="功能">Features</a>
+  </li>
+  <li>
+    <a class="dac-header-tab selected" href="https://developer.android.com/studio/intro/index.html" es-lang="Guía del usuario" id-lang="Panduan Pengguna" ja-lang="ユーザーガイド" ko-lang="사용자 가이드" pt-br-lang="Guia do usuário" zh-cn-lang="用户指南">User Guide</a>
+  </li>
+</ul>
+<form data-search="" class="dac-header-search">
+  <button class="dac-header-search-close" data-search-close="">
+    <i class="dac-sprite dac-back-arrow"></i>
+  </button>
+
+  <div class="dac-header-search-inner">
+    <i class="dac-sprite dac-search-white dac-header-search-icon"></i>
+    <input id="search_autocomplete" type="text" value="" autocomplete="off" name="q" class="dac-header-search-input" placeholder="Search">
+    <button class="dac-header-search-clear dac-hidden" data-search-clear="">
+      <i class="dac-sprite dac-close-black"></i>
+    </button>
+  </div>
+</form>
+
+
+      </div><!--/.header-wrap.wrap-->
+    </div><!--/.header-->
+
+    
+
+<div id="search-results" class="dac-search-results">
+  <div id="dac-search-results-history" class="dac-search-results-history">
+    <div class="wrap dac-search-results-history-wrap dac-hidden">
+      <div class="cols">
+        <div class="col-1of2 col-tablet-1of2 col-mobile-1of1">
+          <h2 style="padding-bottom: 0px;">Most visited</h2><hr>
+          <div class="resource-flow-layout" data-history-query="history:most/visited" data-maxresults="3" data-cardsizes="18x2"></div>
+        </div>
+
+        <div class="col-1of2 col-tablet-1of2 col-mobile-1of1">
+          <h2 style="padding-bottom: 0px;">Recently visited</h2><hr>
+          <div class="resource-flow-layout cols" data-history-query="history:recent" data-allow-duplicates="true" data-maxresults="3" data-cardsizes="18x2"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="dac-search-results-content" class="dac-search-results-content">
+    <div class="dac-search-results-metadata wrap">
+      <div class="dac-search-results-for">
+        <h2 style="padding-bottom: 0px;">Results for <span id="search-results-for"></span></h2><hr>
+      </div>
+
+      <div id="dac-search-results-hero"></div>
+
+      <div class="dac-search-results-hero cols">
+        <div id="dac-search-results-reference" class="col-3of6 col-tablet-1of2 col-mobile-1of1">
+          <div class="suggest-card reference no-display">
+            <ul class="dac-search-results-reference">
+            </ul>
+          </div>
+        </div>
+        
+        <div id="dac-custom-search-results"></div>
+        
+      </div>
+
+      
+
+    </div>
+  </div>
+</div>
+
+  </header>
+
+  <a name="navigation" tabindex="0" class="nav-start-marker">navigation</a>
+  <nav class="dac-nav">
+    <div class="dac-nav-dimmer" data-dac-toggle-nav=""></div>
+    <div class="dac-nav-sidebar" data-swap="" data-dynamic="false" data-transition-speed="300" data-dac-nav="">
+      <div data-swap-container="">
+        
+        <a class="dac-nav-back-button dac-swap-section dac-up dac-active" tabindex="0" data-swap-button="">
+          
+          <i class="dac-sprite dac-nav-back"></i> <span class="dac-nav-back-title">User Guide</span>
+        </a>
+
+        <div class="dac-nav-sub dac-swap-section dac-right dac-active" itemscope="" itemtype="http://schema.org/SiteNavigationElement">
+          
+          
+            
+            <ul id="nav">
+              <li class="nav-section"><div class="nav-section-header"><a href="https://developer.android.com/studio/intro/index.html" es-lang="Conocer Android Studio" id-lang="Mengenal Android Studio" ja-lang="Android Studio の概要" ko-lang="Android 스튜디오 만나보기" pt-br-lang="Conheça o Android Studio" zh-cn-lang="探索 Android Studio">Meet Android Studio</a><span class="toggle-icon" tabindex="0"></span></div><ul><li><a href="https://developer.android.com/studio/intro/migrate.html" es-lang="Realizar una migración a Studio" id-lang="Bermigrasi ke Studio" ja-lang="Eclipse から Android Studio への移行" ko-lang="Studio로 마이그레이션" pt-br-lang="Migre para o Studio" zh-cn-lang="迁移至 Studio">Migrate to Studio</a></li><li><a href="https://developer.android.com/studio/intro/studio-config.html" es-lang="Configurar el IDE" id-lang="Mengonfigurasi IDE" ja-lang="Android Studio の設定" ko-lang="IDE 구성" pt-br-lang="Configurar o IDE" zh-cn-lang="配置 IDE">Configure the IDE</a></li><li><a href="https://developer.android.com/studio/intro/keyboard-shortcuts.html">Keyboard Shortcuts</a></li><li><a href="https://developer.android.com/studio/intro/accessibility.html">Accessibility Features</a></li><li><a href="https://developer.android.com/studio/intro/update.html" es-lang="Actualizar el IDE y las herramientas" id-lang="Memperbarui IDE dan Alat" ja-lang="IDE および SDK ツールの更新" ko-lang="IDE 및 도구 업데이트" pt-br-lang="Atualizar IDE e ferramentas" zh-cn-lang="更新 IDE 和工具">Update the IDE and Tools</a></li></ul></li><li class="nav-section"><div class="nav-section-header empty"><a href="https://developer.android.com/studio/workflow.html">Workflow Basics</a></div></li><li class="nav-section expanded"><div class="nav-section-header"><a href="https://developer.android.com/studio/projects/index.html">Manage Your Project</a><span class="toggle-icon" tabindex="0"></span></div><ul style="display: block;"><li><a href="https://developer.android.com/studio/projects/create-project.html">Create a Project</a></li><li class="selected"><a href="https://developer.android.com/studio/projects/add-native-code.html">Add C and C++ Code</a></li><li><a href="https://developer.android.com/studio/projects/android-library.html">Create an Android Library</a></li><li><a href="https://developer.android.com/studio/projects/continuous-integration.html">Set Up Continuous Integration</a></li></ul></li><li class="nav-section"><div class="nav-section-header"><a href="https://developer.android.com/studio/write/index.html">Write Your App</a><span class="toggle-icon" tabindex="0"></span></div><ul><li><a href="https://developer.android.com/studio/projects/templates.html">Add Code from a Template</a></li><li><a href="https://developer.android.com/studio/projects/add-app-module.html">Add a Module for a New Device</a></li><li><a href="https://developer.android.com/studio/write/create-java-class.html">Create a Java Class or Type</a></li><li><a href="https://developer.android.com/studio/write/add-resources.html">Add App Resources</a></li><li><a href="https://developer.android.com/studio/write/layout-editor.html">Build a UI with Layout Editor</a></li><li><a href="https://developer.android.com/studio/write/theme-editor.html">Design App Themes</a></li><li><a href="https://developer.android.com/studio/write/vector-asset-studio.html">Add Multi-Density Vector Graphics</a></li><li><a href="https://developer.android.com/studio/write/image-asset-studio.html">Create Icons with Image Asset Studio</a></li><li><a href="https://developer.android.com/studio/write/draw9patch.html">Create Resizable Bitmaps (9-Patch)</a></li><li><a href="https://developer.android.com/studio/write/translations-editor.html">Localize the UI</a></li><li><a href="https://developer.android.com/studio/write/app-link-indexing.html">Add URL and App Indexing Support</a></li><li><a href="https://developer.android.com/studio/write/firebase.html">Connect to Firebase</a></li><li><a href="https://developer.android.com/studio/write/lint.html">Improve Your Code with Lint</a></li><li><a href="https://developer.android.com/studio/write/annotations.html">Improve Code Inspection with Annotations</a></li></ul></li><li class="nav-section"><div class="nav-section-header"><a href="https://developer.android.com/studio/run/index.html" es-lang="Compilar y ejecutar tu app" id-lang="Membuat dan Menjalankan Aplikasi Anda" ja-lang="アプリをビルドして実行する" ko-lang="앱 빌드 및 실행" pt-br-lang="Compilar e executar seu aplicativo" zh-cn-lang="构建和运行您的应用">Build and Run Your App</a><span class="toggle-icon" tabindex="0"></span></div><ul><li class="nav-section"><div class="nav-section-header"><a href="https://developer.android.com/studio/run/emulator.html" es-lang="Ejecutar apps en el emulador" id-lang="Menjalankan Aplikasi pada Emulator" ja-lang="Android Emulator 上でアプリを実行する" ko-lang="Emulator에서 앱 실행" pt-br-lang="Executar aplicativos no emulador" zh-cn-lang="在模拟器上运行应用">Run Apps on the Emulator</a><span class="toggle-icon" tabindex="0"></span></div><ul><li><a href="https://developer.android.com/studio/run/managing-avds.html" es-lang="Crear y administrar dispositivos virtuales" id-lang="Membuat dan Mengelola Perangkat Virtual" ja-lang="仮想端末の作成と管理" ko-lang="가상 기기 생성 및 관리" pt-br-lang="Criar e gerenciar dispositivos virtuais" zh-cn-lang="创建和管理虚拟设备">Create and Manage Virtual Devices</a></li><li><a href="https://developer.android.com/studio/run/emulator-commandline.html">Control the Emulator from the Command Line</a></li><li><a href="https://developer.android.com/studio/run/emulator-acceleration.html">Configure Hardware Acceleration</a></li></ul></li><li class="nav-section"><div class="nav-section-header"><a href="https://developer.android.com/studio/run/device.html" es-lang="Ejecutar apps en un dispositivo de hardware" id-lang="Menjalankan Aplikasi di Perangkat Keras" ja-lang="ハードウェア端末上でアプリを実行する" ko-lang="하드웨어 기기에서 앱 실행" pt-br-lang="Executar aplicativos em um dispositivo de hardware" zh-cn-lang="在硬件设备上运行应用">Run Apps on a Hardware Device</a><span class="toggle-icon" tabindex="0"></span></div><ul><li><a href="https://developer.android.com/studio/run/oem-usb.html" es-lang="Instalar controladores USB de OEM" id-lang="Memasang Driver USB OEM" ja-lang="OEM USB ドライバのインストール" ko-lang="OEM USB 드라이버 설치" pt-br-lang="Instalar drivers USB OEM" zh-cn-lang="安装原始设备制造商 USB 驱动程序">Install OEM USB Drivers</a></li><li><a href="https://developer.android.com/studio/run/win-usb.html" es-lang="Obtener el controlador USB de Google" id-lang="Memperoleh Driver USB Google" ja-lang="Google USB ドライバを入手する" ko-lang="Google USB 드라이버 가져오기" pt-br-lang="Obter o driver USB do Google" zh-cn-lang="获取 Google USB 驱动程序">Get the Google USB Driver</a></li></ul></li><li><a href="https://developer.android.com/studio/run/rundebugconfig.html">Create Run/Debug Configurations</a></li></ul></li><li class="nav-section"><div class="nav-section-header"><a href="https://developer.android.com/studio/build/index.html">Configure Your Build</a><span class="toggle-icon" tabindex="0"></span></div><ul><li><a href="https://developer.android.com/studio/build/application-id.html">Set the Application ID</a></li><li><a href="https://developer.android.com/studio/build/build-variants.html">Configure Build Variants</a></li><li><a href="https://developer.android.com/studio/build/configure-apk-splits.html">Configure APK Splits</a></li><li><a href="https://developer.android.com/studio/build/manifest-merge.html">Merge Multiple Manifests</a></li><li><a href="https://developer.android.com/studio/build/manifest-build-variables.html">Inject Build Variables into the Manifest</a></li><li><a href="https://developer.android.com/studio/build/shrink-code.html">Shrink Your Code and Resources</a></li><li><a href="https://developer.android.com/studio/build/multidex.html">Configure Apps with Over 64K Methods</a></li><li><a href="https://developer.android.com/studio/build/building-cmdline.html">Run Gradle from the Command Line</a></li><li><a href="https://developer.android.com/studio/build/apk-analyzer.html">Analyze Your Build with APK Analyzer</a></li></ul></li><li class="nav-section"><div class="nav-section-header"><a href="https://developer.android.com/studio/debug/index.html">Debug Your App</a><span class="toggle-icon" tabindex="0"></span></div><ul><li><a href="https://developer.android.com/studio/debug/am-logcat.html">Write and View Logs</a></li><li><a href="https://developer.android.com/studio/debug/stacktraces.html">Analyze a Stack Trace</a></li><li><a href="https://developer.android.com/studio/debug/am-gpu-debugger.html">Analyze OpenGL ES Apps</a></li><li><a href="https://developer.android.com/studio/debug/am-screenshot.html">Take a Screenshot</a></li><li><a href="https://developer.android.com/studio/debug/am-video.html">Record a Video</a></li></ul></li><li class="nav-section"><div class="nav-section-header"><a href="https://developer.android.com/studio/test/index.html">Test Your App</a><span class="toggle-icon" tabindex="0"></span></div><ul><li><a href="https://developer.android.com/studio/test/command-line.html">Test from the Command Line</a></li><li><a href="https://developer.android.com/studio/test/espresso-test-recorder.html">Create UI Tests with Espresso Test Recorder</a></li><li><a href="https://developer.android.com/studio/test/monkey.html">UI/App Exerciser Monkey</a></li><li class="nav-section"><div class="nav-section-header"><a href="https://developer.android.com/studio/test/monkeyrunner/index.html">monkeyrunner Reference</a><span class="toggle-icon" tabindex="0"></span></div><ul><li><a href="https://developer.android.com/studio/test/monkeyrunner/MonkeyDevice.html">MonkeyDevice</a></li><li><a href="https://developer.android.com/studio/test/monkeyrunner/MonkeyImage.html">MonkeyImage</a></li><li><a href="https://developer.android.com/studio/test/monkeyrunner/MonkeyRunner.html">MonkeyRunner</a></li></ul></li></ul></li><li class="nav-section"><div class="nav-section-header"><a href="https://developer.android.com/studio/profile/index.html">Profile Your App</a><span class="toggle-icon" tabindex="0"></span></div><ul><li class="nav-section"><div class="nav-section-header"><a href="https://developer.android.com/studio/profile/android-monitor.html">Android Monitor Overview</a><span class="toggle-icon" tabindex="0"></span></div><ul><li><a href="https://developer.android.com/studio/profile/am-basics.html">Begin with Android Monitor Basics</a></li></ul></li><li><a href="https://developer.android.com/studio/profile/am-memory.html">Optimize Memory Use with the Memory Monitor</a></li><li><a href="https://developer.android.com/studio/profile/investigate-ram.html">Investigate Your RAM Usage</a></li><li><a href="https://developer.android.com/studio/profile/am-cpu.html">Tune CPU Use with the CPU Monitor</a></li><li class="nav-section"><div class="nav-section-header"><a href="https://developer.android.com/studio/profile/gpu.html">Perfect GPU Use</a><span class="toggle-icon" tabindex="0"></span></div><ul><li><a href="https://developer.android.com/studio/profile/am-gpu.html">Analyze GPU Use with the GPU Monitor</a></li><li><a href="https://developer.android.com/studio/profile/dev-options-overdraw.html">Visualize GPU Overdraw</a></li><li><a href="https://developer.android.com/studio/profile/dev-options-rendering.html">Profile GPU Rendering</a></li></ul></li><li><a href="https://developer.android.com/studio/profile/am-network.html">Track Network Use with the Network Monitor</a></li><li><a href="https://developer.android.com/studio/profile/am-hprof.html">Analyze the Java Heap with the HPROF Viewer and Analyzer</a></li><li><a href="https://developer.android.com/studio/profile/am-allocation.html">Improve Memory Allocation with the Allocation Tracker</a></li><li><a href="https://developer.android.com/studio/profile/am-methodtrace.html">Study the Call Stack with the Method Tracer</a></li><li><a href="https://developer.android.com/studio/profile/am-sysinfo.html">Evaluate dumpsys System Information</a></li><li class="nav-section"><div class="nav-section-header"><a href="https://developer.android.com/studio/profile/battery-historian.html">Profile Battery Usage</a><span class="toggle-icon" tabindex="0"></span></div><ul><li><a href="https://developer.android.com/studio/profile/battery-historian-charts.html">Understand Historian Charts</a></li></ul></li><li class="nav-section"><div class="nav-section-header"><a href="https://developer.android.com/studio/profile/monitor.html">Android Device Monitor and DDMS Overview</a><span class="toggle-icon" tabindex="0"></span></div><ul><li><a href="https://developer.android.com/studio/profile/ddms.html">Use DDMS</a></li><li class="nav-section"><div class="nav-section-header"><a href="https://developer.android.com/studio/profile/traceview.html">Trace Your Code Functions with Traceview</a><span class="toggle-icon" tabindex="0"></span></div><ul><li><a href="https://developer.android.com/studio/profile/traceview-walkthru.html">Walk through Traceview</a></li></ul></li><li class="nav-section"><div class="nav-section-header"><a href="https://developer.android.com/studio/profile/systrace.html">Analyze UI Performance with Systrace</a><span class="toggle-icon" tabindex="0"></span></div><ul><li><a href="https://developer.android.com/studio/profile/systrace-walkthru.html">Walk through Systrace</a></li><li><a href="https://developer.android.com/studio/profile/systrace-commandline.html">Systrace Command Reference</a></li></ul></li><li class="nav-section"><div class="nav-section-header"><a href="https://developer.android.com/studio/profile/hierarchy-viewer.html">Profile Your Layout with Hierarchy Viewer</a><span class="toggle-icon" tabindex="0"></span></div><ul><li><a href="https://developer.android.com/studio/profile/optimize-ui.html">Optimize Your UI</a></li><li><a href="https://developer.android.com/studio/profile/hierarchy-viewer-walkthru.html">Walk through Hierarchy Viewer</a></li><li><a href="https://developer.android.com/studio/profile/hierarchy-viewer-setup.html">Set Up Devices for Hierarchy Viewer</a></li><li><a href="https://developer.android.com/studio/profile/hierarchy-viewer-results-walkthru.html">Interpret Hierarchy Viewer Results</a></li></ul></li><li><a href="https://developer.android.com/studio/profile/heap-viewer-walkthru.html">Inspect the Memory Heap with Heap Viewer</a></li><li><a href="https://developer.android.com/studio/profile/allocation-tracker-walkthru.html">Track Memory Allocation with Allocation Tracker</a></li><li><a href="https://developer.android.com/studio/profile/gltracer.html">Trace OpenGL Code</a></li></ul></li></ul></li><li class="nav-section"><div class="nav-section-header"><a href="https://developer.android.com/studio/publish/index.html">Publish Your App</a><span class="toggle-icon" tabindex="0"></span></div><ul><li><a href="https://developer.android.com/studio/publish/preparing.html" zh-cn-lang="准备发布">Prepare for Release</a></li><li><a href="https://developer.android.com/studio/publish/versioning.html">Version Your App</a></li><li><a href="https://developer.android.com/studio/publish/app-signing.html">Sign Your App</a></li></ul></li><li class="nav-section"><div class="nav-section-header"><a href="https://developer.android.com/studio/command-line/index.html">Command Line Tools</a><span class="toggle-icon" tabindex="0"></span></div><ul><li><a href="https://developer.android.com/studio/command-line/adb.html">adb</a></li><li><a href="https://developer.android.com/studio/command-line/apksigner.html">apksigner</a></li><li><a href="https://developer.android.com/studio/command-line/bmgr.html">bmgr</a></li><li><a href="https://developer.android.com/studio/command-line/etc1tool.html">etc1tool</a></li><li><a href="https://developer.android.com/studio/command-line/jobb.html">jobb</a></li><li><a href="https://developer.android.com/studio/command-line/logcat.html">logcat</a></li><li><a href="https://developer.android.com/studio/command-line/mksdcard.html">mksdcard</a></li><li><a href="https://developer.android.com/studio/command-line/zipalign.html">zipalign</a></li></ul></li><li class="nav-section"><div class="nav-section-header"><a href="https://developer.android.com/studio/releases/index.html">Release Notes</a><span class="toggle-icon" tabindex="0"></span></div><ul><li><a href="https://developer.android.com/studio/releases/sdk-tools.html">SDK Tools</a></li><li><a href="https://developer.android.com/studio/releases/build-tools.html">SDK Build Tools</a></li><li><a href="https://developer.android.com/studio/releases/gradle-plugin.html">Android Plugin for Gradle</a></li><li><a href="https://developer.android.com/studio/releases/platforms.html">SDK Platform</a></li></ul></li>
+            </ul>
+            
+          
+        </div>
+        
+        
+  
+<ul id="dac-main-navigation" class="dac-nav-list dac-swap-section dac-left">
+  <li class="dac-nav-item">
+    <a class="dac-nav-back-button back-to-dev" tabindex="0" es-lang="Volver al sitio para desarrolladores" id-lang="Kembali ke Pengembang" ja-lang="開発トップページに戻る" ko-lang="개발자로 돌아가기" pt-br-lang="Voltar aos Desenvolvedores" zh-cn-lang="返回到开发者主页" href="https://developer.android.com/develop/index.html">
+      <i class="dac-sprite dac-nav-back"></i>Back to Developers
+    </a>
+  </li>
+  <li class="dac-nav-item download">
+    <a class="dac-nav-link" href="https://developer.android.com/studio/index.html" es-lang="Descargar" id-lang="Unduh" ja-lang="ダウンロード" ko-lang="다운로드" pt-br-lang="Download" zh-cn-lang="下载">Download</a>
+  </li>
+  <li class="dac-nav-item features">
+    <a class="dac-nav-link" href="https://developer.android.com/studio/features.html" es-lang="Funciones" id-lang="Fitur" ja-lang="機能" ko-lang="기능" pt-br-lang="Recursos" zh-cn-lang="功能">Features</a>
+  </li>
+  <li class="dac-nav-item guide">
+    <a class="dac-nav-link selected" href="https://developer.android.com/studio/intro/index.html" es-lang="Guía del usuario" id-lang="Panduan Pengguna" ja-lang="ユーザーガイド" ko-lang="사용자 가이드" pt-br-lang="Guia do usuário" zh-cn-lang="用户指南">User Guide</a><span class="dac-nav-link-forward" tabindex="0"><i class="dac-sprite dac-nav-forward"></i></span>
+  </li>
+</ul>
+
+
+      </div>
+    </div>
+  </nav>
+
+  <a name="top" tabindex="0"></a>
+  
+  <div class="wrap clearfix" id="body-content" style="padding-bottom: 40px;">
+  
+    
+      
+      <div class="content-header">
+        <ul class="dac-header-crumbs dac-has-content"><li class="dac-header-crumbs-item"><a class="dac-header-crumbs-link" href="https://developer.android.com/studio/intro/index.html">User Guide</a></li><li class="dac-header-crumbs-item"><a class="dac-header-crumbs-link" href="https://developer.android.com/studio/projects/index.html">Manage Your Project</a></li></ul>
+        <!-- Breadcrumb Setup -->
+        <script>$('.dac-nav-list').dacCurrentPage().dacCrumbs();</script>
+        <h1 itemprop="name">Add C and C++ Code to Your Project</h1>
+        
+      </div>
+      
+    
+    <div class="jd-descr" itemprop="articleBody">
+      
+
+<div id="qv-wrapper">
+  <div id="qv">
+    <h2>In this document</h2>
+    <ol>
+      <li><a href="https://developer.android.com/studio/projects/add-native-code.html#download-ndk">Download the NDK and Build Tools</a></li>
+      <li><a href="https://developer.android.com/studio/projects/add-native-code.html#new-project">Create a New Project with C/C++ Support</a>
+        <ol>
+          <li><a href="https://developer.android.com/studio/projects/add-native-code.html#build-run-sample">Build and run the sample app</a></li>
+        </ol>
+      </li>
+      <li><a href="https://developer.android.com/studio/projects/add-native-code.html#existing-project">Add C/C++ Code to an Existing Project</a>
+        <ol>
+          <li><a href="https://developer.android.com/studio/projects/add-native-code.html#create-sources">Create new native source files</a></li>
+          <li><a href="https://developer.android.com/studio/projects/add-native-code.html#create-cmake-script">Create a CMake build script</a></li>
+          <li><a href="https://developer.android.com/studio/projects/add-native-code.html#link-gradle">Link Gradle to your native library</a></li>
+        </ol>
+      </li>
+    </ol>
+  </div>
+</div>
+
+<p>
+  Using Android Studio, you can add C and C++ code to your app by compiling it
+  into a native library that Gradle can package with your APK. Your Java code
+  can then call functions in your native library through the Java Native
+  Interface (JNI). If you want to learn more about using the JNI framework,
+  read <a href="https://developer.android.com/training/articles/perf-jni.html">JNI tips for Android</a>.
+</p>
+
+<p>
+  Android Studio's default build tool for native libraries is CMake. Android
+  Studio also supports <a href="https://developer.android.com/ndk/guides/ndk-build.html">ndk-build</a> due
+  to the large number of existing projects that use the build toolkit to
+  compile their native code. If you want to import an existing ndk-build
+  library into your Android Studio project, see the section about how to
+  configure Gradle to <a href="https://developer.android.com/studio/projects/add-native-code.html#link-gradle">link to your native library</a>.
+  However, if you are creating a new native library, you should use CMake.
+</p>
+
+<p>
+  This page gives you the information you need to set up Android Studio with
+  the necessary build tools, create or configure a project to support native
+  code on Android, and build and run your app.
+</p>
+
+<p class="note">
+  <strong>Note:</strong> To use CMake or ndk-build from Android Studio, you
+  need to use <a href="https://developer.android.com/studio/index.html">Android Studio 2.2 or higher</a>
+  with the <a href="https://developer.android.com/studio/releases/gradle-plugin.html">Android Plugin for
+  Gradle version 2.2.0 or higher</a>.
+</p>
+
+<p class="caution">
+  <strong>Attention experimental Gradle users:</strong> Consider <a href="http://tools.android.com/tech-docs/new-build-system/gradle-experimental/migrate-to-stable">
+  migrating to plugin version 2.2.0 or higher</a>, and using CMake or ndk-build
+  to build your native libraries if any of the following apply to you: Your
+  native project already uses CMake or ndk-build; you would rather use a stable
+  version of the Gradle build system; or you want support for add-on tools,
+  such as <a href="https://ccache.samba.org/" class="external-link">CCache</a>.
+  Otherwise, you can continue to <a href="http://tools.android.com/tech-docs/new-build-system/gradle-experimental">use
+  the experimental version of Gradle and the Android plugin</a>.
+</p>
+
+<h2 id="download-ndk" style="padding-bottom: 0px;">
+  Download the NDK and Build Tools
+</h2><hr>
+
+<p>
+  To compile and debug native code for your app, you need the following components:
+</p>
+
+<ul>
+  <li>
+    <em><a href="https://developer.android.com/ndk/index.html">The Android Native Development Kit
+    (NDK)</a></em>: a toolset that allows you to use C and C++ code with
+    Android, and provides platform libraries that allow you to manage native
+    activities and access physical device components, such as sensors and touch
+    input.
+  </li>
+
+  <li>
+    <em><a href="https://cmake.org/" class="external-link">CMake</a></em>: an
+    external build tool that works alongside Gradle to build your native
+    library. You do not need this component if you only plan to use ndk-build.
+  </li>
+
+  <li>
+    <em><a href="http://lldb.llvm.org/" class="external-link">LLDB</a></em>: the
+    debugger Android Studio uses to <a href="https://developer.android.com/studio/debug/index.html">debug native code</a>.
+  </li>
+</ul>
+
+<p>
+  You can install these components <a href="https://developer.android.com/studio/intro/update.html#sdk-manager">using the SDK Manager</a>:
+</p>
+
+<ol>
+  <li>From an open project, select <strong>Tools &gt; Android &gt; SDK
+  Manager</strong> from the menu bar.
+  </li>
+
+  <li>Click the <strong>SDK Tools</strong> tab.
+  </li>
+
+  <li>Check the boxes next to <strong>LLDB</strong>, <strong>CMake</strong>,
+  and <strong>NDK</strong>, as shown in figure 1.
+  <img src="https://developer.android.com/studio/images/projects/ndk-install_2-2_2x.png" alt="" width="727">
+    <p class="img-caption">
+      <strong>Figure 1.</strong> Installing LLDB, CMake, and the NDK from the
+      SDK Manager.
+    </p>
+  </li>
+
+  <li>Click <strong>Apply</strong>, and then click <strong>OK</strong> in the
+  pop-up dialog.
+  </li>
+
+  <li>When the installation is complete, click <b>Finish</b>, and then click
+  <strong>OK</strong>.
+  </li>
+</ol>
+
+<h2 id="new-project" style="padding-bottom: 0px;">
+  Create a New Project with C/C++ Support
+</h2><hr>
+
+<p>
+  Creating a new project with support for native code is similar to
+  <a href="https://developer.android.com/studio/projects/create-project.html">creating any other Android
+  Studio project</a>, but there are a few additional steps:
+</p>
+
+<ol>
+  <li>In the <strong>Configure your new project</strong> section of the wizard,
+  check the <strong>Include C++ Support</strong> checkbox.
+  </li>
+
+  <li>Click <strong>Next</strong>.
+  </li>
+
+  <li>Complete all other fields and the next few sections of the wizard as
+  normal.
+  </li>
+
+  <li>In the <strong>Customize C++ Support</strong> section of the wizard, you
+  can customize your project with the following options:
+    <ul>
+      <li>
+        <strong>C++ Standard</strong>: use the drop-down list to select which
+        standardization of C++ you want to use. Selecting <strong>Toolchain
+        Default</strong> uses the default CMake setting.
+      </li>
+
+      <li>
+        <strong>Exceptions Support</strong>: check this box if you want to enable
+        support for C++ exception handling. If enabled, Android Studio adds the
+        <code>-fexceptions</code> flag to <code>cppFlags</code> in your module-level
+        <code>build.gradle</code> file, which Gradle passes to CMake.
+      </li>
+
+      <li>
+        <strong>Runtime Type Information Support</strong>: check this box if
+        you want support for RTTI. If enabled, Android Studio adds the
+        <code>-frtti</code> flag to <code>cppFlags</code> in your module-level
+        <code>build.gradle</code> file, which Gradle passes to CMake.
+      </li>
+    </ul>
+  </li>
+
+  <li>Click <strong>Finish</strong>.
+  </li>
+</ol>
+
+<p>
+  After Android Studio finishes creating your new project, open the
+  <strong>Project</strong> pane from the left side of the IDE and select the
+  <strong>Android</strong> view. As shown in figure 2, Android Studio adds the
+  <strong>cpp</strong> and <strong>External Build Files</strong> groups:
+</p>
+
+<ol class="callouts">
+    <img src="./Add C and C++ Code to Your Project _ Android Studio_files/cpp-project-view_2-2_2x.png" alt="" width="286">
+    <p class="img-caption">
+      <strong>Figure 2.</strong> Android view groups for your native sources
+      and external build scripts.
+    </p>
+
+    <p class="note">
+      <strong>Note:</strong> This view does not reflect the actual file hierarchy
+      on disk, but groups similar files to simplify navigating your project.
+    </p>
+
+  <li>The <strong>cpp</strong> group is where you can find all the native
+  source files, headers, and prebuilt libraries that are a part of your
+  project. For new projects, Android Studio creates a sample C++ source file,
+  <code>native-lib.cpp</code>, and places it in the <code>src/main/cpp/</code>
+  directory of your app module. This sample code provides a simple C++
+  function, <code>stringFromJNI()</code>, that returns the string “Hello from
+  C++”. You can learn how to add additional source files to your project in
+  the section about how to <a href="https://developer.android.com/studio/projects/add-native-code.html#create-sources">Create new native source
+  files</a>.
+  </li>
+
+  <li>The <strong>External Build Files</strong> group is where you can find
+  build scripts for CMake or ndk-build. Similar to how
+  <code>build.gradle</code> files tell Gradle how to build your app, CMake and
+  ndk-build require a build script to know how to build your native library.
+  For new projects, Android Studio creates a CMake build script,
+  <code>CMakeLists.txt</code>, and places it in your module’s root directory.
+  You can learn more about the contents of this build script in the section
+  about how to <a href="https://developer.android.com/studio/projects/add-native-code.html#create-cmake-script">Create a Cmake Build Script</a>.
+  </li>
+</ol>
+
+<h3 id="build-run-sample">
+  Build and run the sample app
+</h3>
+
+<p>
+  When you click <b>Run</b> <img src="./Add C and C++ Code to Your Project _ Android Studio_files/toolbar-run.png" alt="run then run app from the menu bar" class="inline-icon">, Android Studio
+  builds and launches an app that displays the text “Hello from C++” on your
+  Android device or emulator. The following overview describes the events that
+  occur in order to build and run the sample app:
+</p>
+
+<ol>
+  <li>Gradle calls upon your external build script,
+  <code>CMakeLists.txt</code>.
+  </li>
+
+  <li>CMake follows commands in the build script to compile a C++ source
+  file, <code>native-lib.cpp</code>, into a shared object library and names
+  it <code>libnative-lib.so</code>, which Gradle then packages into the APK.
+  </li>
+
+  <li>During runtime, the app's <code>MainActivity</code> loads the native
+  library using <a href="https://developer.android.com/reference/java/lang/System.html#loadLibrary(java.lang.String)">
+  <code>System.loadLibrary()</code></a>. The library’s native function,
+  <code>stringFromJNI()</code>, is now availableto the app.
+  </li>
+
+  <li>
+    <code>MainActivity.onCreate()</code> calls <code>stringFromJNI()</code>,
+    which returns “Hello from C++”, and uses it to update the <a href="https://developer.android.com/reference/android/widget/TextView.html"><code>TextView</code></a>.
+  </li>
+</ol>
+
+<p class="note">
+  <strong>Note:</strong> <a href="https://developer.android.com/studio/run/index.html#instant-run">Instant
+  Run</a> is not compatible with projects that use native code. Android Studio
+  automatically disables the feature.
+</p>
+
+<p>
+  If you want to verify that Gradle packages the native library in the APK, you
+  can use the <a href="https://developer.android.com/studio/build/apk-analyzer.html">APK Analyzer</a>:
+</p>
+
+<ol>
+  <li>Select <strong>Build &gt; Analyze APK</strong>.
+  </li>
+
+  <li>Select the APK from the <code>app/build/outputs/apk/</code> directory and
+  click <strong>OK</strong>.
+  </li>
+
+  <li>As shown in figure 3, you can see <code>libnative-lib.so</code> in the
+  APK Analyzer window under <code>lib/&lt;ABI&gt;/</code>.
+  <img src="https://developer.android.com/studio/images/projects/cpplib-apk-analyzer_2-2_2x.png" alt="" width="583">
+    <p class="img-caption">
+      <strong>Figure 3.</strong> Locating a native library using the APK
+      Analyzer.
+    </p>
+  </li>
+</ol>
+
+<p class="note">
+  <strong>Tip:</strong> If you want to experiment with other Android apps that
+  use native code, click <strong>File &gt; New &gt; Import Sample</strong> and
+  select a sample project from the <strong>Ndk</strong> list.
+</p>
+
+<h2 id="existing-project" style="padding-bottom: 0px;">
+  Add C/C++ Code to an Existing Project
+</h2><hr>
+
+<p>
+  If you want to add native code to an existing project, perform
+  these steps:
+</p>
+
+<ol>
+  <li>
+    <a href="https://developer.android.com/studio/projects/add-native-code.html#create-sources">Create new native source files</a> and add them
+    to your Android Studio project.
+    <ul>
+      <li>You can skip this step if you already have native code or want to import a
+      prebuilt native library.
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    <a href="https://developer.android.com/studio/projects/add-native-code.html#create-cmake-script">Create a CMake build script</a> to build
+    your native source code into a library. You also require this build script
+    if you are importing and linking against prebuilt or platform libraries.
+    <ul>
+      <li>If you have an existing native library that already has a
+      <code>CMakeLists.txt</code> build script, or uses ndk-build and includes an
+      <a href="https://developer.android.com/ndk/guides/android_mk.html"><code>Android.mk</code></a> build
+      script, you can skip this step.
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    <a href="https://developer.android.com/studio/projects/add-native-code.html#link-gradle">Link Gradle to your native library</a> by providing
+    a path to your CMake or ndk-build script file. Gradle uses the build script
+    to import source code into your Android Studio project and package your
+    native library (the SO file) into the APK.
+  </li>
+</ol>
+
+<p>
+  Once you configure your project, you can access your native functions from
+  Java code using the <a href="http://docs.oracle.com/javase/7/docs/technotes/guides/jni/spec/jniTOC.html" class="external-link">JNI framework</a>. To build and run your app, simply
+  click <b>Run</b> <img src="./Add C and C++ Code to Your Project _ Android Studio_files/toolbar-run.png" alt="run then run app from the menu bar" class="inline-icon">. Gradle adds your
+  external native build process as a dependency to compile, build, and package
+  your native library with your APK.
+</p>
+
+<h3 id="create-sources">Create new native source files</h3>
+
+<p>
+  To create a <code>cpp/</code> directory with new native source files in the
+  main sourceset of your app module, proceed as follows:
+</p>
+
+<ol>
+  <li>Open the <strong>Project</strong> pane from the left side of the IDE and
+  select the <strong>Project</strong> view from the drop-down menu.
+  </li>
+
+  <li>Navigate to <strong><var>your-module</var> &gt; src</strong>, right-click
+  on the <strong>main</strong> directory, and select <strong>New &gt;
+  Directory</strong>.
+  </li>
+
+  <li>Enter a name for the directory (such as <code>cpp</code>) and click
+  <strong>OK</strong>.
+  </li>
+
+  <li>Right-click on the directory you just created and select <strong>New &gt;
+  C/C++ Source File</strong>.
+  </li>
+
+  <li>Enter a name for your source file, such as <code>native-lib</code>.
+  </li>
+
+  <li>From the <strong>Type</strong> drop-down menu, select the file extension
+  for your source file, such as <code>.cpp</code>.
+    <ul>
+      <li>You can add other file types to the drop-down menu, such as
+      <code>.cxx</code> or <code>.hxx</code>, by clicking <b>Edit File Types</b>
+      <img src="./Add C and C++ Code to Your Project _ Android Studio_files/dialog-wrench.png" alt="" class="inline-icon">. In the <strong>C/C++</strong> dialog box that pops up,
+      select another file extension from the <strong>Source Extension</strong> and
+      <strong>Header Extension</strong> drop-down menus and click
+      <strong>OK</strong>.
+      </li>
+    </ul>
+  </li>
+
+  <li>If you also want to create a header file, check the <strong>Create an
+  associated header</strong> checkbox.
+  </li>
+
+  <li>Click <strong>OK</strong>.
+  </li>
+</ol>
+
+<h3 id="create-cmake-script">
+  Create a CMake build script
+</h3>
+
+<p>
+  If your native sources don’t already have a CMake build script, you need to
+  create one yourself and include the appropriate CMake commands. A CMake build
+  script is a plain text file that you must name <code>CMakeLists.txt</code>.
+  This section covers some basic commands you should include in your build
+  script in order to tell CMake which sources to use when creating your native
+  library.
+</p>
+
+<p class="note">
+  <strong>Note:</strong> If your project uses ndk-build, you don’t need to
+  create a CMake build script. You can <a href="https://developer.android.com/studio/projects/add-native-code.html#link-gradle">link Gradle to
+  your native library</a> by providing a path to your <a href="https://developer.android.com/ndk/guides/android_mk.html"><code>Android.mk</code></a> file.
+</p>
+
+<p>
+  To create a plain text file that you can use as your CMake build script,
+  proceed as follows:
+</p>
+
+<ol>
+  <li>Open the <b>Project</b> pane from the left side of the IDE and select the
+  <b>Project</b> view from the drop-down menu.
+  </li>
+
+  <li>Right-click on the root directory of <b><var>your-module</var></b> and
+  select <b>New &gt; File</b>.
+    <p class="note">
+      <b>Note:</b> You can create the build script in any location you want.
+      However, when configuring the build script, paths to your native source
+      files and libraries are relative to the location of the build script.
+    </p>
+  </li>
+
+  <li>Enter "CMakeLists.txt" as the filename and click <b>OK</b>.
+  </li>
+</ol>
+
+<p>
+  You can now configure your build script by adding CMake commands. To instruct
+  CMake to create a native library from native source code, add the <a href="https://cmake.org/cmake/help/latest/command/cmake_minimum_required.html" class="external-link"><code>cmake_minimum_required()</code></a> and <a href="https://cmake.org/cmake/help/latest/command/add_library.html" class="external-link"><code>add_library()</code></a> commands to your build script:
+</p>
+
+<pre class="no-pretty-print"># Sets the minimum version of CMake required to build your native library.
+# This ensures that a certain set of CMake features is available to
+# your build.
+
+cmake_minimum_required(VERSION 3.4.1)
+
+# Specifies a library name, specifies whether the library is STATIC or
+# SHARED, and provides relative paths to the source code. You can
+# define multiple libraries by adding multiple add.library() commands,
+# and CMake builds them for you. When you build your app, Gradle
+# automatically packages shared libraries with your APK.
+
+add_library( # Specifies the name of the library.
+             native-lib
+
+             # Sets the library as a shared library.
+             SHARED
+
+             # Provides a relative path to your source file(s).
+             src/main/cpp/native-lib.cpp )
+</pre>
+
+<p>
+  When you add a source file or library to your CMake build script using
+  <code>add_library()</code>, Android Studio also shows associated header files
+  in the <strong>Project</strong> view after you sync your project. However, in
+  order for CMake to locate your header files during compile time, you need to
+  add the <a href="https://cmake.org/cmake/help/latest/command/include_directories.html" class="external-link"><code>include_directories()</code></a> command to your CMake
+  build script and specify the path to your headers:
+</p>
+
+<pre class="no-pretty-print">add_library(...)
+
+# Specifies a path to native header files.
+include_directories(src/main/cpp/include/)
+</pre>
+
+<p>
+  The convention CMake uses to name the file of your library is as follows:
+</p>
+
+<blockquote>
+  <code>lib<var>library-name</var>.so</code>
+</blockquote>
+
+<p>
+  For example, if you specify "native-lib" as the name of your shared library
+  in the build script, CMake creates a file named
+  <code>libnative-lib.so</code>. However, when loading this library in your
+  Java code, use the name you specified in the CMake build script:
+</p>
+
+<pre class="prettyprint"><span class="kwd">static</span><span class="pln"> </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="typ">System</span><span class="pun">.</span><span class="pln">loadLibrary</span><span class="pun">(“</span><span class="kwd">native</span><span class="pun">-</span><span class="pln">lib</span><span class="pun">”);</span><span class="pln"><br></span><span class="pun">}</span></pre>
+
+<p class="note">
+  <strong>Note:</strong> If you rename or remove a library in your CMake build
+  script, you need to clean your project before Gradle applies the changes or
+  removes the older version of the library from your APK. To clean your
+  project, select <strong>Build &gt; Clean Project</strong> from the menu bar.
+</p>
+
+<p>
+  Android Studio automatically adds the source files and headers to the
+  <strong>cpp</strong> group in the <strong>Project</strong> pane. By using
+  multiple <code>add_library()</code> commands, you can define additional
+  libraries for CMake to build from other source files.
+</p>
+
+<h4 id="add-ndk-api">
+  Add NDK APIs
+</h4>
+
+<p>
+  The Android NDK provides a set of native APIs and libraries that you may find
+  useful. You can use any of these APIs by including <a href="https://developer.android.com/ndk/guides/stable_apis.html">the NDK libraries</a> in your project’s
+  <code>CMakeLists.txt</code> script file.
+</p>
+
+<p>
+  Prebuilt NDK libraries already exist on the Android platform, so you don’t
+  need to build them or package them into your APK. Because the NDK libraries
+  are already a part of CMake’s search path, you don’t even need to specify the
+  location of the library in your local NDK installation—you only need to
+  provide CMake with the name of the library you want to use and link it
+  against your own native library.
+</p>
+
+<p>
+  Add the <a href="https://cmake.org/cmake/help/latest/command/find_library.html" class="external-link"><code>find_library()</code></a> command to your CMake build
+  script to locate an NDK library and store its path as a variable. You use
+  this variable to refer to the NDK library in other parts of the build script.
+  The following sample locates the <a href="https://developer.android.com/ndk/guides/stable_apis.html#a3">Android-specific log support library</a>
+  and stores its path in <code>log-lib</code>:
+</p>
+
+<pre class="no-pretty-print">find_library( # Defines the name of the path variable that stores the
+              # location of the NDK library.
+              log-lib
+
+              # Specifies the name of the NDK library that
+              # CMake needs to locate.
+              log )
+</pre>
+
+<p>
+  In order for your native library to call functions in the <code>log</code>
+  library, you need to link the libraries using the <a href="https://cmake.org/cmake/help/latest/command/target_link_libraries.html" class="external-link"><code>target_link_libraries()</code></a> command in
+  your CMake build script:
+</p>
+
+<pre class="no-pretty-print">find_library(...)
+
+# Links your native library against one or more other native libraries.
+target_link_libraries( # Specifies the target library.
+                       native-lib
+
+                       # Links the log library to the target library.
+                       ${log-lib} )
+</pre>
+
+<p>
+  The NDK also includes some libraries as source code that you need to build
+  and link to your native library. You can compile the source code into a
+  native library by using the <code>add_library()</code> command in your CMake build script.
+  To provide a path to your local NDK library, you can use the
+  <code>ANDROID_NDK</code> path variable, which Android Studio automatically
+  defines for you.
+</p>
+
+<p>
+  The following command tells CMake to build
+  <code>android_native_app_glue.c</code>, which manages <a href="https://developer.android.com/reference/android/app/NativeActivity.html"><code>NativeActivity</code></a>
+  lifecycle events and touch input, into a static library and links it to
+  <code>native-lib</code>:
+</p>
+
+<pre class="no-pretty-print">add_library( app-glue
+             STATIC
+             ${ANDROID_NDK}/sources/android/native_app_glue/android_native_app_glue.c )
+
+# You need to link static libraries against your shared native library.
+target_link_libraries( native-lib app-glue ${log-lib} )
+</pre>
+
+<h4 id="add-other-library">
+  Add other prebuilt libraries
+</h4>
+
+<p>
+  Adding a prebuilt library is similar to specifying another native library for
+  CMake to build. However, because the library is already built, you need to
+  use the <a href="https://cmake.org/cmake/help/latest/prop_tgt/IMPORTED.html#prop_tgt:IMPORTED" class="external-link"><code>IMPORTED</code></a> flag to tell CMake that you
+  only want to import the library into your project:
+</p>
+
+<pre class="no-pretty-print">add_library( imported-lib
+             SHARED
+             IMPORTED )
+</pre>
+
+<p>
+  You then need to specify the path to the library using the
+  <a href="https://cmake.org/cmake/help/latest/command/set_target_properties.html" class="external-link"><code>set_target_properties()</code></a> command as
+  shown below.
+</p>
+
+<p>
+  Some libraries provide separate packages for specific CPU architectures, or
+  <a href="https://developer.android.com/ndk/guides/abis.html">Application Binary Interfaces (ABI)</a>, and
+  organize them into separate directories. This approach helps libraries take
+  advantage of certain CPU architectures while allowing you to use only the
+  versions of the library you want. To add multiple ABI versions of a library
+  to your CMake build script, without having to write multiple commands for
+  each version of the library, you can use the <code>ANDROID_ABI</code> path
+  variable. This variable uses a list of the default <a href="https://developer.android.com/ndk/guides/abis.html#sa">ABIs that the NDK supports</a>, or a filtered list
+  of ABIs you <a href="https://developer.android.com/studio/projects/add-native-code.html#specify-abi">manually configure Gradle</a> to
+  use. For example:
+</p>
+
+<pre class="no-pretty-print">add_library(...)
+set_target_properties( # Specifies the target library.
+                       imported-lib
+
+                       # Specifies the parameter you want to define.
+                       PROPERTIES IMPORTED_LOCATION
+
+                       # Provides the path to the library you want to import.
+                       imported-lib/src/${ANDROID_ABI}/libimported-lib.so )
+</pre>
+
+<p>
+  For CMake to locate your header files during compile time, you need to use
+  the <code>include_directories()</code> command and include the path to your
+  header files:
+</p>
+
+<pre class="no-pretty-print">include_directories( imported-lib/include/ )
+</pre>
+
+<p class="note">
+  <strong>Note:</strong> If you want to package a prebuilt library that is not
+  a build-time dependency—for example, when adding a prebuilt library that is a
+  dependency of <code>imported-lib</code>, you do not need perform the
+  following instructions to link the library.
+</p>
+
+<p>
+  To link the prebuilt library to your own native library, add it to the
+  <code>target_link_libraries()</code> command in your CMake build script:
+</p>
+
+<pre class="no-pretty-print">target_link_libraries( native-lib imported-lib app-glue ${log-lib} )
+</pre>
+
+<p>
+  When you build your app, Gradle automatically packages the imported library
+  into the APK. You can verify which libraries Gradle packages into your APK by
+  using the <a href="https://developer.android.com/studio/build/apk-analyzer.html">APK Analyzer</a>. For
+  more information about CMake commands, see the <a href="https://cmake.org/cmake/help/latest/manual/cmake-commands.7.html" class="external-link">CMake documentation</a>."
+</p>
+
+<h3 id="link-gradle">
+  Link Gradle to your native library
+</h3>
+
+<p>
+  To link Gradle to your native library, you need to provide a path to your
+  CMake or ndk-build script file. When you build your app, Gradle runs CMake or
+  ndk-build as a dependency, and packages shared libraries with your APK.
+  Gradle also uses the build script to know which files to pull into your
+  Android Studio project, so you can access them from the <b>Project</b>
+  window. If you don’t have a build script for your native sources, you need to
+  <a href="https://developer.android.com/studio/projects/add-native-code.html#create-cmake-script">create a CMake build script</a> before you
+  proceed.
+</p>
+
+<p>
+  Once you link Gradle to a native project, Android Studio updates the
+  <strong>Project</strong> pane to show your source files and native libraries
+  in the <strong>cpp</strong> group, and your external build scripts in the
+  <strong>External Build Files</strong> group.
+</p>
+
+<p class="note">
+  <b>Note:</b> When making changes to the Gradle configuration, make sure to
+  apply your changes by clicking <b>Sync Project</b> <img src="./Add C and C++ Code to Your Project _ Android Studio_files/toolbar-sync-gradle.png" alt="" class="inline-icon"> in the toolbar.
+  Additionally, when making changes to your CMake or ndk-build script file
+  after you have already linked it to Gradle, you should sync Android Studio
+  with your changes by selecting <b>Build &gt; Refresh Linked C++ Projects</b>
+  from the menu bar.
+</p>
+
+<h4 id="link-with-ui">
+  Use the Android Studio UI
+</h4>
+
+<p>
+  You can link Gradle to an external CMake or ndk-build project using the
+  Android Studio UI:
+</p>
+
+<ol>
+  <li>Open the <strong>Project</strong> pane from the left side of the IDE and
+  select the <strong>Android</strong> view.
+  </li>
+
+  <li>Right-click on the module you would like to link to your native library,
+  such as the <strong>app</strong> module, and select <strong>Link C++ Project
+  with Gradle</strong> from the menu. You should see a dialog similar to the
+  one shown in figure 4.
+  </li>
+
+  <li>From the drop-down menu, select either <strong>CMake</strong> or <strong>
+    ndk-build</strong>.
+    <ol type="a">
+      <li>If you select <strong>CMake</strong>, use the field next to <strong>
+        Project Path</strong> to specify the <code>CMakeLists.txt</code> script
+        file for your external CMake project.
+      </li>
+
+      <li>If you select <strong>ndk-build</strong>, use the field next to
+      <strong>Project Path</strong> to specify the <a href="https://developer.android.com/ndk/guides/android_mk.html"><code>Android.mk</code></a> script file for
+      your external ndk-build project. Android Studio also includes the
+        <a href="https://developer.android.com/ndk/guides/application_mk.html"><code>Application.mk</code></a>
+        file if it is located in the same directory as your
+        <code>Android.mk</code> file.
+      </li>
+    </ol>
+    <img src="./Add C and C++ Code to Your Project _ Android Studio_files/link-cpp-project_2-2_2x.png" alt="" width="486">
+    <p class="img-caption">
+      <strong>Figure 4.</strong> Linking an external C++ project using the
+      Android Studio dialog.
+    </p>
+  </li>
+
+  <li>Click <strong>OK</strong>.
+  </li>
+</ol>
+
+<h4 id="configure-gradle">
+  Manually configure Gradle
+</h4>
+
+<p>
+  To manually configure Gradle to link to your native library, you need to add
+  the <code>externalNativeBuild {}</code> block to your module-level
+  <code>build.gradle</code> file and configure it with either <code>cmake
+  {}</code> or <code>ndkBuild {}</code>:
+</p>
+
+<pre class="no-pretty-print">android {
+  ...
+  defaultConfig {...}
+  buildTypes {...}
+
+  // Encapsulates your external native build configurations.
+  externalNativeBuild {
+
+    // Encapsulates your CMake build configurations.
+    cmake {
+
+      // Provides a relative path to your CMake build script.
+      path "CMakeLists.txt"
+    }
+  }
+}
+</pre>
+
+<p class="note">
+  <strong>Note:</strong> If you want to link Gradle to an existing ndk-build
+  project, use the <code>ndkBuild {}</code> block instead of <code>cmake
+  {}</code>, and provide a relative path to your <a href="https://developer.android.com/ndk/guides/android_mk.html"><code>Android.mk</code></a> file. Gradle also
+  includes the <a href="https://developer.android.com/ndk/guides/application_mk.html"><code>Application.mk</code></a> file if it
+  is located in the same directory as your <a href="https://developer.android.com/ndk/guides/android_mk.html"><code>Android.mk</code></a> file.
+</p>
+
+<h5 id="pass-args-flags">
+  Specify optional configurations
+</h5>
+
+<p>
+  You can specify optional arguments and flags for CMake or ndk-build by
+  configuring another <code>externalNativeBuild {}</code> block within the
+  <code>defaultConfig {}</code> block of your module-level
+  <code>build.gradle</code> file. Similar to other properties in the
+  <code>defaultConfig {}</code> block, you can override these properties
+  for each product flavor in your build configuration.
+</p>
+
+<p>
+  For example, if your CMake or ndk-build project defines multiple native
+  libraries, you can use the <code>targets</code> property to build and package
+  only a subset of those libraries for a given product flavor. The following
+  code sample describes some of the properties you can configure:
+</p>
+
+<pre class="no-pretty-print">android {
+  ...
+  defaultConfig {
+    ...
+    // This block is different from the one you use to link Gradle
+    // to your CMake or ndk-build script.
+    externalNativeBuild {
+
+      // For ndk-build, instead use ndkBuild {}
+      cmake {
+
+        // Passes optional arguments to CMake.
+        arguments "-DANDROID_TOOLCHAIN=clang"
+
+        // Sets optional flags for the C compiler.
+        cFlags "-D_EXAMPLE_C_FLAG1", "-D_EXAMPLE_C_FLAG2"
+
+        // Sets a flag to enable format macro constants for the C++ compiler.
+        cppFlags "-D__STDC_FORMAT_MACROS"
+      }
+    }
+  }
+
+  buildTypes {...}
+
+  productFlavors {
+    ...
+    demo {
+      ...
+      externalNativeBuild {
+        cmake {
+          ...
+          // Specifies which native libraries to build and package for this
+          // product flavor. If you don't configure this property, Gradle
+          // builds and packages all shared object libraries that you define
+          // in your CMake or ndk-build project.
+          targets "native-lib-demo"
+        }
+      }
+    }
+
+    paid {
+      ...
+      externalNativeBuild {
+        cmake {
+          ...
+          targets "native-lib-paid"
+        }
+      }
+    }
+  }
+
+  // Use this block to link Gradle to your CMake or ndk-build script.
+  externalNativeBuild {
+    cmake {...}
+    // or ndkBuild {...}
+  }
+}
+</pre>
+
+<p>
+  To learn more about configuring product flavors and build variants, go to
+  <a href="https://developer.android.com/studio/build/build-variants.html">Configure Build Variants</a>. For
+  a list of variables you can configure for CMake with the
+  <code>arguments</code> property, see <a href="https://developer.android.com/ndk/guides/cmake.html#variables">Using CMake Variables</a>.
+</p>
+
+<h5 id="specify-abi">
+  Specify ABIs
+</h5>
+
+<p>
+  By default, Gradle builds your native library into separate <code>.so</code>
+  files for the <a href="https://developer.android.com/ndk/guides/abis.html#sa">ABIs the NDK supports</a>
+  and packages them all into your APK. If you want Gradle to build and package
+  only certain ABI configurations of your native libraries, you can specify
+  them with the <code>ndk.abiFilters</code> flag in your module-level
+  <code>build.gradle</code> file, as shown below:
+</p>
+
+<pre class="no-pretty-print">android {
+  ...
+  defaultConfig {
+    ...
+    externalNativeBuild {
+      cmake {...}
+      // or ndkBuild {...}
+    }
+
+    ndk {
+      // Specifies the ABI configurations of your native
+      // libraries Gradle should build and package with your APK.
+      abiFilters 'x86', 'x86_64', 'armeabi', 'armeabi-v7a',
+                   'arm64-v8a'
+    }
+  }
+  buildTypes {...}
+  externalNativeBuild {...}
+}
+</pre>
+
+<p>
+  In most cases, you only need to specify <code>abiFilters</code> in the
+  <code>ndk {}</code> block, as shown above, because it tells Gradle to both
+  build and package those versions of your native libraries. However, if you
+  want to control what Gradle should build, independently of what you want it
+  to package into your APK, configure another <code>abiFilters</code> flag in
+  the <code>defaultConfig.externalNativeBuild.cmake {}</code> block (or
+  <code>defaultConfig.externalNativeBuild.ndkBuild {}</code> block). Gradle
+  builds those ABI configurations but only packages the ones you specify in the
+  <code>defaultConfig.ndk{}</code> block.
+</p>
+
+<p>
+  To further reduce the size of your APK, consider <a href="https://developer.android.com/studio/build/configure-apk-splits.html#configure-abi-split">configuring ABI
+  APK splits</a>—instead of creating one large APK with the all versions of
+  your native libraries, Gradle creates a separate APK for each ABI you want to
+  support and only packages the files each ABI needs. If you configure an ABI
+  split without specifying the <code>abiFilters</code> flag as shown in the
+  code sample above, Gradle builds all supported ABI versions of your native
+  libraries, but only packages those you specify in your ABI split
+  configuration. To avoid building versions of your native libraries that you
+  don't want, provide the same list of ABIs for both the
+  <code>abiFilters</code> flag and your ABI split configuration.
+</p>
+
+
+    </div>
+
+    
+
+    
+    
+
+
+
+<div class="wrap">
+  <footer class="dac-footer ">
+    <div class="cols dac-footer-main">
+      <div class="col-1of2">
+        <a class="dac-footer-getnews" id="newsletter" data-modal-toggle="newsletter" title="Sign up for the newsletter">
+          Get news &amp; tips <span class="dac-fab dac-primary"><i class="dac-sprite dac-mail"></i><span class="hide-text">Sign up for the newsletter</span></span>
+        </a>
+      </div>
+      <div class="col-1of2 dac-footer-reachout">
+        <div class="dac-footer-contact">
+          <a class="dac-footer-contact-link" href="http://android-developers.blogspot.com/" title="Blog">Blog</a>
+          <a class="dac-footer-contact-link" href="https://developer.android.com/support.html" title="Support">Support</a>
+        </div>
+        <div class="dac-footer-social">
+          <a class="dac-button-social dac-youtube dac-footer-social-link" href="https://www.youtube.com/user/androiddevelopers" title="Android Developers on YouTube"><i class="dac-sprite dac-youtube"></i><span class="hide-text">Android Developers on YouTube</span></a>
+          <a class="dac-button-social dac-gplus dac-footer-social-link" href="https://plus.google.com/+AndroidDevelopers" title="Android Developers on Google+"><i class="dac-sprite dac-gplus"></i><span class="hide-text">Android Developers on Google+</span></a>
+          <a class="dac-button-social dac-twitter dac-footer-social-link" href="https://twitter.com/AndroidDev" title="Android Developers on Twitter"><i class="dac-sprite dac-twitter"></i><span class="hide-text">Android Developers on Twitter</span></a>
+        </div>
+      </div>
+    </div>
+
+    <hr class="dac-footer-separator">
+      
+      <p class="dac-footer-copyright">
+        Except as noted, this content is
+        licensed under <a href="http://creativecommons.org/licenses/by/2.5/">
+        Creative Commons Attribution 2.5</a>. For details and
+        restrictions, see the <a href="https://developer.android.com/license.html">Content
+        License</a>.
+      </p>
+    
+
+    <p class="dac-footer-links">
+      <a href="https://developer.android.com/about/android.html" title="About Android">About Android</a>
+      <a href="https://developer.android.com/auto/index.html" title="Auto">Auto</a>
+      <a href="https://developer.android.com/tv/index.html" title="TV">TV</a>
+      <a href="https://developer.android.com/wear/index.html" title="Wear">Wear</a>
+      <a href="https://developer.android.com/legal.html" title="Legal">Legal</a>
+
+      <!-- TODO(akassay) Update all DAC js to use the class instead of the id b/30368561 -->
+      </p><form class="devsite-utility-footer-language" id="setlang" action="https://developer.android.com/i18n/setlang/" method="post">
+        <input type="hidden" name="xsrf_token" value="ppNZseICvqbetXd3LxRhFJTg2tH-CxgY9tODBc5IzrQ6MTQ3Njk0NDg5Mzk5NjAyMA">
+        <input type="hidden" name="next" value="/studio/projects/add-native-code.html">
+        <span id="language" class="locales">
+        <select class="devsite-utility-footer-language-select" name="language">
+          
+            
+            
+            <option value="en" selected="selected">
+              English
+            </option>
+            
+            <option value="es">
+              español
+            </option>
+            
+            <option value="id">
+              Bahasa Indonesia
+            </option>
+            
+            <option value="ja">
+              日本語
+            </option>
+            
+            <option value="ko">
+              한국어
+            </option>
+            
+            <option value="pt-br">
+              Português Brasileiro
+            </option>
+            
+            <option value="ru">
+              Русский
+            </option>
+            
+            <option value="vi">
+              Tiếng Việt
+            </option>
+            
+            <option value="zh-cn">
+              简体中文
+            </option>
+            
+            <option value="zh-tw">
+              繁體中文
+            </option>
+            
+          
+        </select>
+        </span>
+      </form>
+    <p></p>
+  </footer>
+</div><!--/.wrap -->
+
+
+<div class="dac-toast-group">
+  <div class="dac-toast dac-visible" data-toast="">
+    <div class="dac-toast-wrap">
+      This site uses cookies to store your preferences for site-specific language and display options.
+    <button class="dac-toast-close-btn"><span class="dac-button dac-raised dac-primary">OK</span></button></div>
+  </div>
+</div>
+
+<div data-modal="newsletter" data-newsletter="" data-swap="" class="dac-modal newsletter">
+  <div class="dac-modal-container">
+    <div class="dac-modal-window">
+      <header class="dac-modal-header">
+        <div class="dac-modal-header-actions">
+          <button class="dac-modal-header-close" data-modal-toggle=""></button>
+        </div>
+        <div class="dac-swap" data-swap-container="">
+          <section class="dac-swap-section dac-active dac-down">
+            <h2 class="norule dac-modal-header-title" data-t="newsletter.title">Get the latest Android developer news and tips that will help you find success on Google Play.</h2>
+            <p class="dac-modal-header-subtitle" data-t="newsletter.requiredHint">* Required Fields</p>
+          </section>
+          <section class="dac-swap-section dac-up">
+            <h2 class="norule dac-modal-header-title" data-t="newsletter.successTitle">Hooray!</h2>
+          </section>
+        </div>
+      </header>
+      <div class="dac-swap" data-swap-container="">
+        <section class="dac-swap-section dac-active dac-left">
+          <iframe name="dac-newsletter-iframe" src="./Add C and C++ Code to Your Project _ Android Studio_files/saved_resource.html" style="display: none;"></iframe><form action="https://docs.google.com/forms/d/1QgnkzbEJIDu9lMEea0mxqWrXUJu0oBCLD7ar23V0Yys/formResponse" class="dac-form" method="post" target="dac-newsletter-iframe">
+            <input type="hidden" name="entry.935454734" data-newsletter-language="" value="English">
+            <section class="dac-modal-content">
+              <fieldset class="dac-form-fieldset">
+                <div class="cols">
+                  <div class="col-1of2 newsletter-leftCol">
+                    <div class="dac-form-input-group">
+                      <label for="newsletter-full-name" class="dac-form-floatlabel" data-t="newsletter.name">Full name</label>
+                      <input type="text" class="dac-form-input" name="entry.1357890476" id="newsletter-full-name" required="">
+                      <span class="dac-form-required">*</span>
+                    </div>
+                    <div class="dac-form-input-group">
+                      <label for="newsletter-email" class="dac-form-floatlabel" data-t="newsletter.email">Email address</label>
+                      <input type="email" class="dac-form-input" name="entry.472100832" id="newsletter-email" required="">
+                      <span class="dac-form-required">*</span>
+                    </div>
+                  </div>
+                  <div class="col-1of2 newsletter-rightCol">
+                    <div class="dac-form-input-group">
+                      <label for="newsletter-company" class="dac-form-floatlabel" data-t="newsletter.company">Company / developer name</label>
+                      <input type="text" class="dac-form-input" name="entry.1664780309" id="newsletter-company">
+                    </div>
+                    <div class="dac-form-input-group">
+                      <label for="newsletter-play-store" class="dac-form-floatlabel" data-t="newsletter.appUrl">One of your Play Store app URLs</label>
+                      <input type="url" class="dac-form-input" name="entry.47013838" id="newsletter-play-store" required="">
+                      <span class="dac-form-required">*</span>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset class="dac-form-fieldset">
+                <div class="cols">
+                  <div class="col-1of2 newsletter-leftCol">
+                    <legend class="dac-form-legend"><span data-t="newsletter.business.label">Which best describes your business:</span><span class="dac-form-required">*</span>
+                    </legend>
+                    <div class="dac-form-radio-group">
+                      <input type="radio" value="Apps" class="dac-form-radio" name="entry.1796324055" id="newsletter-business-type-app" required="">
+                      <label for="newsletter-business-type-app" class="dac-form-radio-button"></label>
+                      <label for="newsletter-business-type-app" class="dac-form-label" data-t="newsletter.business.apps">Apps</label>
+                    </div>
+                    <div class="dac-form-radio-group">
+                      <input type="radio" value="Games" class="dac-form-radio" name="entry.1796324055" id="newsletter-business-type-games" required="">
+                      <label for="newsletter-business-type-games" class="dac-form-radio-button"></label>
+                      <label for="newsletter-business-type-games" class="dac-form-label" data-t="newsletter.business.games">Games</label>
+                    </div>
+                    <div class="dac-form-radio-group">
+                      <input type="radio" value="Apps and Games" class="dac-form-radio" name="entry.1796324055" id="newsletter-business-type-appsgames" required="">
+                      <label for="newsletter-business-type-appsgames" class="dac-form-radio-button"></label>
+                      <label for="newsletter-business-type-appsgames" class="dac-form-label" data-t="newsletter.business.both">Apps &amp; Games</label>
+                    </div>
+                  </div>
+                  <div class="col-1of2 newsletter-rightCol newsletter-checkboxes">
+                    <div class="dac-form-radio-group">
+                      <div class="dac-media">
+                        <div class="dac-media-figure">
+                          <input type="checkbox" class="dac-form-checkbox" name="entry.732309842" id="newsletter-add" required="" value="Add me to the mailing list for the monthly newsletter and occasional emails about development and Google Play opportunities.">
+                          <label for="newsletter-add" class="dac-form-checkbox-button"></label>
+                        </div>
+                        <div class="dac-media-body">
+                          <label for="newsletter-add" class="dac-form-label dac-form-aside"><span data-t="newsletter.confirmMailingList">Add me to the mailing list for the monthly newsletter and occasional emails about development and Google Play opportunities.</span><span class="dac-form-required">*</span></label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="dac-form-radio-group">
+                      <div class="dac-media">
+                        <div class="dac-media-figure">
+                          <input type="checkbox" class="dac-form-checkbox" name="entry.2045036090" id="newsletter-terms" required="" value="I acknowledge that the information provided in this form will be subject to Google&#39;s privacy policy (https://www.google.com/policies/privacy/).">
+                          <label for="newsletter-terms" class="dac-form-checkbox-button"></label>
+                        </div>
+                        <div class="dac-media-body">
+                          <label for="newsletter-terms" class="dac-form-label dac-form-aside"><span data-t="newsletter.privacyPolicy" data-t-html="">I acknowledge that the information provided in this form will be subject to Google's <a href="https://www.google.com/policies/privacy/" target="_blank">privacy policy</a>.</span><span class="dac-form-required">*</span></label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </section>
+            <footer class="dac-modal-footer">
+              <div class="cols">
+                <div class="col-2of5">
+                </div>
+              </div>
+              <button type="submit" value="Submit" class="dac-fab dac-primary dac-large dac-modal-action"><i class="dac-sprite dac-arrow-right"></i></button>
+            </footer>
+          </form>
+        </section>
+        <section class="dac-swap-section dac-right">
+          <div class="dac-modal-content">
+            <p class="newsletter-success-message" data-t="newsletter.successDetails">You have successfully signed up for the latest Android developer news and tips.</p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div><!--/.dac-modal.newsletter-->
+
+
+<div data-modal="langform" class="dac-modal" id="langform">
+  <div class="dac-modal-container">
+    <div class="dac-modal-window">
+      <header class="dac-modal-header">
+        <div class="dac-modal-header-actions">
+          <button class="dac-modal-header-close" data-modal-toggle=""></button>
+        </div>
+        <section class="dac-swap-section dac-active dac-down">
+          <h2 class="norule dac-modal-header-title">Browse this site in English?</h2>
+        </section>
+      </header>
+      <section class="dac-swap-section dac-active dac-left">
+          <section class="dac-modal-content">
+            <fieldset class="dac-form-fieldset">
+              <div class="cols">
+                <div class="col-2of2 langform-leftCol">
+                  <p id="resetLangText">You requested a page in English, but your language preference for this site is English.</p>
+                  <p id="resetLangCta">Would you like to change your language preference and browse this site in English? If you want to change your language preference later, use the language menu at the bottom of each page.</p>
+                </div>
+              </div>
+            </fieldset>
+          </section>
+          <footer class="dac-modal-footer" id="langfooter">
+            <div class="cols">
+              <div class="col-2of5">
+              </div>
+            </div>
+            <a href="https://developer.android.com/studio/projects/add-native-code.html#" class="yes" onclick="return false;">
+              <button class="button dac-primary dac-modal-action lang yes" data-t="newsletter.resetLangButtonYes" data-modal-toggle="">Change Language</button>
+            </a>
+            <a href="https://developer.android.com/studio/projects/add-native-code.html#" class="" onclick="return false;">
+              <button class="button dac-primary dac-modal-action lang no" data-t="newsletter.resetLangButtonNo" data-modal-toggle="">Not Now</button>
+            </a>
+          </footer>
+        
+      </section>
+    </div>
+  </div>
+</div><!--/.dac-modal-->
+
+
+<div data-modal="api-unavailable" class="dac-modal" id="api-unavailable">
+  <div class="dac-modal-container">
+    <div class="dac-modal-window">
+      <header class="dac-modal-header">
+        <div class="dac-modal-header-actions">
+          <button class="dac-modal-header-close" data-modal-toggle=""></button>
+        </div>
+        <section class="dac-swap-section dac-active dac-down">
+          <h2 class="norule dac-modal-header-title">
+            This class requires API level <span class="api-level"></span>
+            or higher
+          </h2>
+        </section>
+      </header>
+      <section class="dac-swap-section dac-active dac-left">
+          <section class="dac-modal-content">
+
+      <p>This doc is hidden because your selected API level for the
+      documentation is <span class="selected-level"></span>. You can change the
+      documentation API level with the selector above the left navigation.</p>
+
+      <p>For more information about specifying the API level your app requires,
+      read <a href="https://developer.android.com/training/basics/supporting-devices/platforms.html">Supporting
+      Different Platform Versions</a>.</p>
+
+          </section>
+          <footer class="dac-modal-footer" id="langfooter">
+            <div class="cols">
+              <div class="col-2of5">
+              </div>
+            </div>
+            <a href="https://developer.android.com/studio/projects/add-native-code.html#" class="ok" onclick="return false;">
+              <button class="button dac-primary dac-modal-action ok" data-modal-toggle="">
+                OK, make this page visible
+              </button>
+            </a>
+          </footer>
+        
+      </section>
+    </div>
+  </div>
+</div><!--/.dac-modal#api-unavailable-->
+
+    
+  </div><!--/#body-content-->
+
+  <!-- Nav Setup -->
+  <script>$('[data-dac-nav]').dacNav();</script>
+  <script type="text/javascript">
+    $('.slideshow-container').dacSlideshow({
+        btnPrev: '.slideshow-prev',
+        btnNext: '.slideshow-next',
+        btnPause: '#pauseButton'
+    });
+
+    $(".feed").dacTabbedList({
+      nav_id: '.feed-nav',
+      frame_id: '.feed-frame'
+    });
+  </script>
+  
+  <script src="./Add C and C++ Code to Your Project _ Android Studio_files/ytblogger_lists_unified.js" defer=""></script>
+  
+  <script src="https://developer.android.com/android_metadata_en.js?v=2016102006" defer=""></script>
+  
+  <script src="./Add C and C++ Code to Your Project _ Android Studio_files/lists.js" defer=""></script>
+  <script src="./Add C and C++ Code to Your Project _ Android Studio_files/gcm_lists.js" defer=""></script>
+  <script src="./Add C and C++ Code to Your Project _ Android Studio_files/gms_lists.js" defer=""></script>
+  <script src="./Add C and C++ Code to Your Project _ Android Studio_files/lists(1).js" defer=""></script>
+  <script src="./Add C and C++ Code to Your Project _ Android Studio_files/lists(2).js" defer=""></script>
+  <script src="./Add C and C++ Code to Your Project _ Android Studio_files/lists(3).js" defer=""></script>
+  <script src="./Add C and C++ Code to Your Project _ Android Studio_files/saved_resource"></script>
+  <script>
+    // Load localized metadata.
+    (function(lang) {
+      if (lang === 'en') { return; }
+      if (devsite.permissions.hasPermission('DAC_DEVSITE_METADATA') || trusted_ip) {
+        document.write('<script src="/android_metadata_' + lang + '.js?v=2016102006" defer></' + 'script>');
+      } else {
+        document.write('<script src="/jd_lists_unified_' + lang + '.js?v=2016102006" defer></' + 'script>');
+      }
+    })(getLangPref())
+
+    // Add skip to content for accessibility.
+    $('#skip-to-main').click(function() {
+      $('a[name=top]').focus();
+    });
+
+    $('.devsite-utility-footer-language-select').each(function() {
+      $(this).change(function() {
+        changeLangPref(this.value, true)
+        $('.devsite-utility-footer-language').submit();
+      });
+    });
+  </script>
+
+  <script>
+    (function($) {
+      devsite.analytics.InitAnalytics();
+    })(jQuery);
+  </script>
+
+  
+
+
+
+</body></html>

@@ -4,7 +4,7 @@
 
 [Add C and C++ Code to Your Project](https://developer.android.com/studio/projects/add-native-code.html)
 
-[本地版Add C and C++ Code to Your Project](Google官方的NDK开发指南/index.htm)
+[本地版Add C and C++ Code to Your Project](Google官方的NDK开发指南/)
 
 ## 1、下载NDK 和 Build Tools
 
